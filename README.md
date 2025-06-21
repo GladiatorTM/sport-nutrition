@@ -1,61 +1,118 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sport Nutrition
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Laravel-проєкт для інтернет-магазину спортивного харчування з сучасною адмін-панеллю.
 
-## About Laravel
+## Можливості
+- Управління продуктами (додавання, редагування, видалення, пошук, фільтрація за категоріями)
+- Управління користувачами (адміністратори та звичайні користувачі)
+- Аналітика продажів та переглядів
+- Завантаження та попередній перегляд зображень продуктів (підтримка jpeg, png, gif, jfif)
+- Адаптивний дизайн для адмін-панелі
+- Авторизація, реєстрація, Google OAuth
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Встановлення
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. Клонувати репозиторій:
+   ```bash
+   git clone https://github.com/GladiatorTM/sport-nutrition.git
+   cd sport-nutrition
+   ```
+2. Встановити залежності:
+   ```bash
+   composer install
+   npm install && npm run build
+   ```
+3. Створити файл налаштувань:
+   ```bash
+   cp .env.example .env
+   ```
+4. Згенерувати ключ додатку:
+   ```bash
+   php artisan key:generate
+   ```
+5. Налаштувати підключення до бази даних у `.env`
+6. Виконати міграції та сидери:
+   ```bash
+   php artisan migrate --seed
+   ```
+7. Створити симлінк для зображень:
+   ```bash
+   php artisan storage:link
+   ```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Доступ до адмін-панелі
+- Увійдіть під користувачем з правами адміністратора (`is_admin = 1` у таблиці users)
+- Адмін-панель доступна за `/admin`
 
-## Learning Laravel
+## Технології
+- Laravel 10+
+- PHP 8+
+- MySQL
+- Tailwind CSS
+- JavaScript (Blade компоненти)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Скрипти для роботи з зображеннями
+У папці `scripts/` є Python-скрипти для автоматичного призначення зображень продуктам.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Ліцензія
+MIT
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+# Sport Nutrition (EN)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+A Laravel-based web application for a sport nutrition e-commerce store with a modern admin panel.
 
-### Premium Partners
+## Features
+- Product management (CRUD, search, category filter)
+- User management (admins & users)
+- Sales & views analytics
+- Product image upload & preview (jpeg, png, gif, jfif supported)
+- Responsive admin panel UI
+- Authentication, registration, Google OAuth
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/GladiatorTM/sport-nutrition.git
+   cd sport-nutrition
+   ```
+2. Install dependencies:
+   ```bash
+   composer install
+   npm install && npm run build
+   ```
+3. Copy environment file:
+   ```bash
+   cp .env.example .env
+   ```
+4. Generate app key:
+   ```bash
+   php artisan key:generate
+   ```
+5. Configure your database in `.env`
+6. Run migrations and seeders:
+   ```bash
+   php artisan migrate --seed
+   ```
+7. Create storage symlink:
+   ```bash
+   php artisan storage:link
+   ```
 
-## Contributing
+## Admin Panel Access
+- Login as a user with `is_admin = 1` in the users table
+- Admin panel is available at `/admin`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Technologies
+- Laravel 10+
+- PHP 8+
+- MySQL
+- Tailwind CSS
+- JavaScript (Blade components)
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Image Scripts
+Python scripts for product image assignment are in the `scripts/` folder.
 
 ## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+MIT
